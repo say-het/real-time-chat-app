@@ -1,25 +1,29 @@
+import { useAuthContext } from "../../context/AuthContext"
+import useConversation from "../../zustand/useConversation";
 
 
-const Message = () => {
+
+const Message = ({message}) => {
+
+  const {authUser} =  useAuthContext();
+  const {selectedConversation} = useConversation();
+  const fromMe = message.senderId===authUser._id;
+  const chatClassName = fromMe?'chat-end':'chat-start';
+  const profilePic = fromMe?authUser.profilePic:selectedConversation?.profilePic;
+  const bubbleColor = fromMe? 'bg-orange-400':'bg-orange-950';
+  const bubblePadding = fromMe? 'ps-96':'pe-96';
+const messageCreateTime  = message.createdAt.substring(11,16)
   return (
     <>
-    <div className="chat chat-end ps-96" >
+    <div className={`chat ${chatClassName} ${bubblePadding}`} >
+      {/* lalalal */}
         <div className="chat-image avatar">
         <div className="w-10 rounded-full">
-            <img src="https://avatar.iran.liara.run/public/girl?username=mymom" alt="" />
+            <img src={`${profilePic}`} alt="" />
         </div>
         </div>
-        <div className={`chat-bubble text-white bg-blue-500`}>Hi BRUH how are you bro you gooood or not i am</div>
-        <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">Hi BRUH</div>
-    </div>
-    <div className="chat chat-start pe-96">
-        <div className="chat-image avatar">
-        <div className="w-10 rounded-full">
-            <img src="https://avatar.iran.liara.run/public/girl?username=mymom" alt="" />
-        </div>
-        </div>
-        <div className={`chat-bubble text-white bg-blue-500`}>Hi BRUH</div>
-        <div className="chat-footer opacity-50 text-xs flex gap-1 items-center">Hi BRUH</div>
+        <div className={`chat-bubble text-white  ${bubbleColor} `}>{message.message}</div>
+        <div className="chat-footer opacity-80 text-white text-xs flex gap-1 items-center">{messageCreateTime}</div>
     </div>
     </>
   )
