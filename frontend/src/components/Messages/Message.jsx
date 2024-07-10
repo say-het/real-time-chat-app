@@ -29,6 +29,7 @@ const Message = ({message}) => {
   const bubbleColor = fromMe? 'bg-orange-400':'bg-orange-950';
   const bubblePadding = fromMe? 'ps-96':'pe-96';
 const messageCreateTime  = convertUTCtoIST(message.createdAt.substring(11,16))
+const shake = message.shouldShake?"shake":'';
 
   return (
     <>
@@ -39,7 +40,7 @@ const messageCreateTime  = convertUTCtoIST(message.createdAt.substring(11,16))
             <img src={`${profilePic}`} alt="" />
         </div>
         </div>
-        <div className={`chat-bubble text-white  ${bubbleColor} `}>{message.message}</div>
+        <div className={`chat-bubble text-white ${shake}  ${bubbleColor} `}>{message.message}</div>
         <div className="chat-footer opacity-80 text-white text-xs flex gap-1 items-center">{messageCreateTime}</div>
     </div>
     </>
