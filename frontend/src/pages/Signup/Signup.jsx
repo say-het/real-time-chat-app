@@ -45,7 +45,7 @@ const Signup = () => {
                  <label className="label p-2">
                   <span className="text-base label-text">Confirm Password</span>
                 </label> 
-                <input value={inputs.confirmPassword} onChange={(e)=>{setInputs({...inputs, confirmPassword:e.target.value})}} type="text" className="w-full input input-bordered h-10"  placeholder="Enter Confirm Password"/>
+                <input value={inputs.confirmPassword}  onChange={(e)=>{setInputs({...inputs, confirmPassword:e.target.value})}} type="password" className="w-full input input-bordered h-10"  placeholder="Enter Confirm Password"/>
                   <GenderCheckBox onCheckboxChange={handleCheckboxChange} selectedGender={inputs.gender}/>
                 <Link to='/login' className="text-sm hover:underline mt-2 inline-block hover:text-blue-600">Already Have an Account?</Link>
                   <div>
