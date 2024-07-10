@@ -7,15 +7,13 @@ const useListenMessages = () => {
   const { messages, setMessages } = useConversation();
 
   useEffect(() => {
-    const handleNewMessage = (newMessage) => {
-      setMessages((prevMessages) => [...prevMessages, newMessage]);
-    };
 
-    socket?.on("newMessage", handleNewMessage);
+    socket?.on("newMessage", (newMessage)=>{
+      setMessages([...messages,newMessage])
+    });
 
-    return () => {
-      socket?.off("newMessage", handleNewMessage);
-    };
+    return () => socket?.off("newMessage");
+    
   }, [socket, setMessages,messages]);
 
 //   return null; 

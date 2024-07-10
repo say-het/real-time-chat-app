@@ -32,8 +32,8 @@ try {
 
     const receiverSocketId = getreceiverSocketId(receiverId);
 
-    if(receiverSocketId!=undefined){
-        io.to(receiverSocketId).emit("NewMessage",newMessage)
+    if(receiverSocketId){
+        io.to(receiverSocketId).emit("newMessage",newMessage)
     }
 
     res.status(201).json(newMessage);
