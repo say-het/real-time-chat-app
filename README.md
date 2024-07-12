@@ -32,6 +32,9 @@ Checkout full working at
 
 **Chat Page** ![image](https://github.com/user-attachments/assets/439e5c95-76c1-4430-8ea8-701fdb8ea0b4)
 
+**Added Skeleton Loading for fun**
+![image](https://github.com/user-attachments/assets/81011d9a-b26d-4ab9-a70f-4314e4b4e191)
+
 
 
 
