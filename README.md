@@ -24,3 +24,15 @@ Welcome to our feature-rich Chat Web Application! This project showcases a moder
 Checkout full working at 
 [Chat App](https://real-time-chat-app-4oto.onrender.com/)
 
+## How does it look & feel?
+
+**Login Page** ![image](https://github.com/user-attachments/assets/c2e11ced-4fb1-4f7d-b3b2-7bd356682cf5)
+
+**Home Page** ![image](https://github.com/user-attachments/assets/c481b038-66e9-4353-a6f0-46d0f5da64b7)
+
+**Chat Page** ![image](https://github.com/user-attachments/assets/439e5c95-76c1-4430-8ea8-701fdb8ea0b4)
+
+
+
+
+
